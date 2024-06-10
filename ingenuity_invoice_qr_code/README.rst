@@ -9,13 +9,13 @@ You can also print the QR code on Invoice as well.
 
 Odoo Version
 =============
-Odoo 14 Community Edition
+Odoo 15 Community Edition
 
 
 Release Notes
 =============
 
-[14.0.0.0] :  Add Module
+[15.0.0.0] :  Add Module
 
 
 Installation
