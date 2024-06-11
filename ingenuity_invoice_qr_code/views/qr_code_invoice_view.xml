@@ -10,7 +10,7 @@
                 <field name="qr_in_report"/>
             </field>
             <xpath expr="/form/sheet/div[hasclass('oe_title')]" position="before">
-                <field name="qr_image" attrs="{'invisible': [('state', '=', 'draft')]}" widget="image" class="oe_avatar"/>
+                <field name="qr_image" invisible="state == 'draft'" widget="image" class="oe_avatar"/>
             </xpath>
         </field>
     </record>
