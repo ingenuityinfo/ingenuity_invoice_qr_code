@@ -9,8 +9,8 @@
             <field name="partner_id" position="after">
                 <field name="qr_in_report"/>
             </field>
-            <xpath expr="//group[@id='header_right_group']/div[1]" position="before">
-                <field name="qr_image" attrs="{'invisible': [('state', '=', 'draft')]}" widget="image" width="100" height="100" />
+            <xpath expr="/form/sheet/div[hasclass('oe_title')]" position="before">
+                <field name="qr_image" attrs="{'invisible': [('state', '=', 'draft')]}" widget="image" class="oe_avatar"/>
             </xpath>
         </field>
     </record>

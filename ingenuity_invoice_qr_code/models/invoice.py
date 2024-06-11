@@ -23,9 +23,9 @@ def generate_qr_code(value):
     qr.add_data(value)
     qr.make(fit=True)
     img = qr.make_image()
-    temp = BytesIO()
-    img.save(temp, format="PNG")
-    qr_img = base64.b64encode(temp.getvalue())
+    stream = BytesIO()
+    img.save(stream, format="PNG")
+    qr_img = base64.b64encode(stream.getvalue())
     return qr_img
 
 
@@ -49,4 +49,8 @@ class AccountMove(models.Model):
             invoice = lf.join(
                 ['Seller name:', supplier_name, 'Vat Registration Number:', vat, 'Date:', date, 'Total with VAT:',
                  total, 'VAT total:', vat_total])
-            order.qr_image = generate_qr_code(invoice)
+            qr_img = generate_qr_code(invoice)
+            order.write({
+                'qr_image' : qr_img
+            })
+            print (self.qr_image,"qr_imageqr_image--------------------")
